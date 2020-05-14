@@ -3,7 +3,8 @@
     "race_name": "Australien",
     "race_date":"2020-05-13",
     "weather_quali": "heavy rain",
-    "weather_race": "dry"
+    "weather_race": "dry",
+    "time": "43:18.410"
 },{
     "race_id":2,
     "race_name": "Bahrain",
