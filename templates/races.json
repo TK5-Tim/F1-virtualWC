@@ -1,0 +1,65 @@
+[{
+    "race_id":1,
+    "race_name": "Australien"
+},{
+    "race_id":2,
+    "race_name": "Bahrain"
+},{
+    "race_id":3,
+    "race_name": "China"
+},{
+    "race_id":4,
+    "race_name": "Aserbaidschan"
+},{
+    "race_id":5,
+    "race_name": "Spanien"
+},{
+    "race_id":6,
+    "race_name": "Monaco"
+},{
+    "race_id":7,
+    "race_name": "Kanada"
+},{
+    "race_id":8,
+    "race_name": "Frankreich"
+},{
+    "race_id":9,
+    "race_name": "Oesterreich"
+},{
+    "race_id":10,
+    "race_name": "Grossbritannien"
+},{
+    "race_id":11,
+    "race_name": "Deutschland"
+},{
+    "race_id":12,
+    "race_name": "Ungarn"
+},{
+    "race_id":13,
+    "race_name": "Belgien"
+},{
+    "race_id":14,
+    "race_name": "Italien"
+},{
+    "race_id":15,
+    "race_name": "Singapur"
+},{
+    "race_id":16,
+    "race_name": "Russland"
+},{
+    "race_id":17,
+    "race_name": "Japan"
+},{
+    "race_id":18,
+    "race_name": "Mexiko"
+},{
+    "race_id":19,
+    "race_name": "USA"
+},{
+    "race_id":20,
+    "race_name": "Brasilien"
+},{
+    "race_id":21,
+    "race_name": "Abu-Dhabi"
+}
+]
