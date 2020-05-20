@@ -1,3 +1,3 @@
 import importer
 
-importer.race_results(1)
+print(importer.parse_race(1,3))

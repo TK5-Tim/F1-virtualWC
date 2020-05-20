@@ -1,26 +1,35 @@
 import json
 import pandas as pd
+import requests
+from tqdm import tqdm
 
+base_url= "https://raw.githubusercontent.com/TK5-Tim/F1-virtualWC/tree/master/data/"
+season_url = base_url + "season{}/races.json"
+quali_url = base_url + "season{}/quali/{}.json"
+race_url = base_url + "season{}/race/{}.json"
 
+def parse_season(season_id):
+    races = requests.get(url=season_url.format(season_id)).json()
+    race_ids = [r['race_id'] for m in races]
 
-def race_info():
-    with open('data/season3/races.json') as f: 
-        races = json.load(f)
-    
-def race_results(race):
-    with open('data/season3/race/%d.json' % (race)) as f: 
-        race = json.load(f)
-    df = pd.io.json.json_normalize(race, sep = "_")
-    print(df)
+    all_drivers = []
+    for race_id in tqdm(race_ids):
+        race = requests.get(url= race_url.format(season_id, race_id)).json()
 
-def quali_results(race):
-    with open('data/season3/quali/%d.json' % (race)) as f: 
-        race = json.load(f)
-    print(race)
+def parse_race(race_id,season_id):
+    race = requests.get(url= race_url.format(season_id, race_id)).json()
+    results = []
 
-def race_frame(race): 
-    with open('data/season3/races.json') as f: 
-        races = json.load(f)
-    with open('data/season3/race/%d.json' % (race)) as f: 
-        raceData = json.load(f)
-    
+    for d in race:
+        attributes = {
+            "race_id" : race_id,
+            "driver_id": d["driver_id"],
+            "driver": d["driver_name"],
+            "team_id": d["team_id"],
+            "team": d["team_name"],
+            "race_position": d["race"]["position"],
+            "quali_position": d["quali"]["position"],
+        }   
+        results.append(attributes)
+        
+    return pd.DataFrame(results)

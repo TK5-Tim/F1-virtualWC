@@ -8,8 +8,10 @@
 },{
     "race_id":2,
     "race_name": "Bahrain",
-    "weather_quali": "",
-    "weather_race": ""
+    "race_date":"2020-05-15",
+    "weather_quali": "cloudless",
+    "weather_race": "cloudless",
+    "time": "43:18.410"
 },{
     "race_id":3,
     "race_name": "China"
