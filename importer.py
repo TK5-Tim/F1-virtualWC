@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 from tqdm import tqdm
 
-base_url= "https://raw.githubusercontent.com/TK5-Tim/F1-virtualWC/tree/master/data/"
+base_url= "https://raw.githubusercontent.com/TK5-Tim/F1-virtualWC/master/data/"
 season_url = base_url + "season{}/races.json"
 quali_url = base_url + "season{}/quali/{}.json"
 race_url = base_url + "season{}/race/{}.json"
@@ -22,13 +22,22 @@ def parse_race(race_id,season_id):
 
     for d in race:
         attributes = {
+            "race_position": d["race"]["position"],
             "race_id" : race_id,
             "driver_id": d["driver_id"],
             "driver": d["driver_name"],
             "team_id": d["team_id"],
             "team": d["team_name"],
-            "race_position": d["race"]["position"],
+            "grid": d["race"]["grid"],
+            "race_penalties": d["race"]["penalties"],
+            "stops": d["race"]["stops"],
+            "gap": d["race"]["gap"],
+            "fastest_round": d["race"]["fastest_round"],
             "quali_position": d["quali"]["position"],
+            "quali_time": d["quali"]["time"],
+            "quali_tires": d["quali"]["tires"],
+            "quali_penalties": d["quali"]["penalties"],
+            
         }   
         results.append(attributes)
         
