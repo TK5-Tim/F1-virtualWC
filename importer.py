@@ -37,8 +37,7 @@ def parse_race(race_id,season_id):
             "quali_time": d["quali"]["time"],
             "quali_tires": d["quali"]["tires"],
             "quali_penalties": d["quali"]["penalties"],
-            
         }   
         results.append(attributes)
         
-    return pd.DataFrame(results)
+    return pd.DataFrame(results).set_index("driver_id")
